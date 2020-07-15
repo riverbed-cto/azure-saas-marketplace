@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+            "value": "simpleLinuxVM"
+        },
+        "adminUsername": {
+            "value": "rvbd_ops" 
+        },
+        "authenticationType": {
+            "value": "sshPublicKey"
+        },
+        "adminPasswordOrKey": {
+            "reference": {
+                "keyVault": {
+                "id": "/subscriptions/0a3efe3f-6387-4c01-b4aa-fadd8c57a890/resourceGroups/mkpltest/providers/Microsoft.KeyVault/vaults/RiverbedSecrets"
+                },
+                "secretName": "rvbdopsPubKey"
+            }
+        },
+        "ubuntuOSVersion": {
+            "value": "18.04-LTS"
+        },
+        "location": {
+            "value": "eastus" 
+        },
+        "VmSize": {
+            "value": "Standard_B2s"
+        },
+        "virtualNetworkName": {
+            "value": "vNet"
+        },
+        "subnetName": {
+            "value": "Subnet"
+        },
+        "networkSecurityGroupName": {
+            "value": "SecGroupNet"
+        }
+    }
+}
